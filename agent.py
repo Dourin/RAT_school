@@ -209,7 +209,7 @@ def receive_commands(socket):
         
         if command.startswith("download"):
             filename = command.split(" ", 1)[1]  # Extrait le nom du fichier de la commande
-            send_file(client_socket, filename)
+            send_file(socket, filename)
 
         if command.startswith("START_FILE_UPLOAD"):
             file_name = command.split(":", 1)[1].strip()
