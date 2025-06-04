@@ -1,4 +1,4 @@
-# Description: Serveur pour le projet Python RAT
+# Agent pour le projet Python RAT
 # Authors: Dorin MUNCIULENU, Mikaël (rentre ton nom de fa;mille) 4SI4
 # Date: 31/01/2024 23h59 depassé
 
