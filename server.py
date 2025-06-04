@@ -190,16 +190,18 @@ if __name__ == "__main__":
             if command.lower() == 'exit':
                 send_command(client_socket, command)  # close client
                 break
-            # T_T
-            if command.startswith("download"):
-                filename = command.split(" ", 1)[1]  
+
+            elif command.startswith("download "):
+                # Envoyer la commande avant de se mettre en attente de la réception du fichier
+                send_command(client_socket, command)
+                filename = command.split(" ", 1)[1]
                 download(client_socket, filename)
 
-            if command.startswith("upload "):
+            elif command.startswith("upload "):
                 file_path = command.split(" ", 1)[1]  # Extraire le chemin du fichier de la commande
-                upload(client_socket, file_path)  
-           
-            else: # commande basique
+                upload(client_socket, file_path)
+
+            else:  # commande basique
                 send_command(client_socket, command)
                 receive_response(client_socket)
 
